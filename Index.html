@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe Tool</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Catch the Ball</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to the Recipe Tool</h1>
-  <div id="app">
-    <input type="text" id="ingredientInput" placeholder="Enter an ingredient">
-    <button onclick="addIngredient()">Add Ingredient</button>
-    <ul id="ingredientList"></ul>
-    <button onclick="findRecipes()">Find Recipes</button>
+  <h1>Catch the Ball!</h1>
+  <p>Click on the ball to score points. You have 30 seconds!</p>
+  <p><strong>Score:</strong> <span id="score">0</span></p>
+  <div id="game-area">
+    <div id="ball"></div>
   </div>
+  <p id="game-over" class="hidden">Time's up! Your final score is <span id="final-score"></span>.</p>
   <script src="script.js"></script>
 </body>
 </html>
