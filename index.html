@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savor Spoon - Your AI Recipe Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>
+      <span class="icon">🍴</span> Savor Spoon <span class="icon">🥄</span>
+    </h1>
+    <p>Your AI Recipe Assistant</p>
+  </header>
+
+  <main>
+    <section id="input-section">
+      <h2>Generate Your Recipe</h2>
+      <form id="recipe-form">
+        <label for="ingredients">Enter Your Ingredients (comma-separated):</label>
+        <textarea id="ingredients" rows="3" placeholder="e.g., tomato, onion, garlic"></textarea>
+
+        <label for="style">Select a Cooking Style:</label>
+        <select id="style">
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="gluten-free">Gluten-Free</option>
+          <option value="keto">Keto</option>
+          <option value="paleo">Paleo</option>
+        </select>
+
+        <button type="submit">Generate Recipe</button>
+      </form>
+    </section>
+
+    <section id="output-section" class="hidden">
+      <h2>Your Recipe</h2>
+      <p id="recipe-output"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Savor Spoon. All rights reserved.</p>
+  </footer>
+</body>
+</html>
