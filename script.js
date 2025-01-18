@@ -1,3 +1,4 @@
+// Sample meal plans for Breakfast, Lunch, and Dinner
 const breakfastMeals = [
     { name: "Oatmeal with Berries", calories: 300, highlights: ["High in fiber", "Good source of antioxidants"] },
     { name: "Avocado Toast", calories: 350, highlights: ["Healthy fats", "Rich in vitamins"] },
@@ -37,11 +38,62 @@ const dinnerMeals = [
     { name: "Grilled Shrimp with Vegetables", calories: 400, highlights: ["High in protein", "Low-calorie"] }
 ];
 
-function displayMeals(mealType) {
-    const mealPlanDisplay = document.getElementById("meal-plan-display");
-    mealPlanDisplay.innerHTML = ""; // Clear previous meal display
+// Select elements
+const genderSelect = document.getElementById('gender');
+const weightSelect = document.getElementById('weight');
+const dietSelect = document.getElementById('diet');
+const mealButtons = document.querySelectorAll('.meal-buttons button');
+const generateButton = document.getElementById('generate-plan');
+const mealPlanDisplay = document.getElementById('meal-plan-display');
+const mealList = document.getElementById('meal-list');
 
+// Initialize meal type to empty
+let selectedMealType = "";
+
+// Function to display selected meal plan
+function displayMealPlan(mealType) {
     let meals = [];
-    if (mealType === "breakfast") meals = breakfastMeals;
-    else if (mealType === "lunch") meals = lunchMeals;
-    else if (mealType === "dinner") meals = dinner
+    if (mealType === 'breakfast') meals = breakfastMeals;
+    else if (mealType === 'lunch') meals = lunchMeals;
+    else if (mealType === 'dinner') meals = dinnerMeals;
+
+    mealList.innerHTML = ''; // Clear previous meal plan
+
+    meals.forEach(meal => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<strong>${meal.name}</strong> - ${meal.calories} Calories <br> Highlights: <ul>`;
+        meal.highlights.forEach(highlight => {
+            listItem.innerHTML += `<li>${highlight}</li>`;
+        });
+        listItem.innerHTML += `</ul>`;
+        mealList.appendChild(listItem);
+    });
+
+    mealPlanDisplay.style.display = 'block'; // Show the meal plan display section
+}
+
+// Event listener for meal buttons
+mealButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        selectedMealType = button.id.replace('-btn', '');
+        displayMealPlan(selectedMealType);
+    });
+});
+
+// Event listener for the "Generate Meal Plan" button
+generateButton.addEventListener('click', function () {
+    if (!selectedMealType) {
+        alert('Please select a meal type (Breakfast, Lunch, or Dinner)');
+        return;
+    }
+
+    const gender = genderSelect.value;
+    const weight = weightSelect.value;
+    const diet = dietSelect.value;
+
+    // Display user preferences (this can be expanded for more complex logic)
+    console.log(`Gender: ${gender}, Weight: ${weight}, Diet: ${diet}, Meal Type: ${selectedMealType}`);
+
+    // Display meal plan based on the selected meal type
+    displayMealPlan(selectedMealType);
+});
