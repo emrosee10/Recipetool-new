@@ -1,88 +1,148 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body and general styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f6f8;
     color: #333;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* User Input Section */
+.user-input {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
     color: #34495e;
 }
 
-.user-input {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-label, select {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-select {
-    padding: 10px;
-    font-size: 1em;
+select, button {
+    font-size: 1.1em;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 }
 
 button {
-    padding: 10px 20px;
     background-color: #16a085;
     color: white;
-    font-size: 1.2em;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 10px 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #1abc9c;
 }
 
-#meal-buttons {
+/* Meal Type Buttons */
+.meal-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.meal-buttons button {
+    width: 30%;
+    background-color: #2980b9;
+    font-size: 1.1em;
+}
+
+.meal-buttons button:hover {
+    background-color: #3498db;
+}
+
+/* Generate Meal Plan Button */
+.generate-btn {
+    background-color: #e74c3c;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.generate-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Meal Plan Display Section */
+.meal-plan-display {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: none;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #34495e;
     margin-bottom: 20px;
 }
 
-#meal-plan-display {
-    text-align: center;
-}
-
-.meal {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.meal h3 {
+#meal-list {
+    list-style-type: disc;
+    padding-left: 30px;
+    font-size: 1.2em;
     color: #2c3e50;
 }
 
-.meal ul {
-    list-style-type: disc;
-    margin-left: 20px;
+#meal-list li {
+    margin: 10px 0;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
     font-size: 1em;
     color: #7f8c8d;
+}
+
+footer p {
+    font-size: 1em;
+    color: #2c3e50;
 }
