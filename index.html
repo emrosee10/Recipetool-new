@@ -3,61 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Planner</title>
+    <title>Healthy Meal Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
         <h1>Healthy Meal Planner</h1>
+        <p>Choose your preferences and generate a personalized meal plan</p>
     </header>
 
+    <!-- User Inputs Section -->
     <section class="user-input">
-        <label for="gender">Select Gender:</label>
-        <select id="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-
-        <label for="weight">Select Weight (kg):</label>
-        <select id="weight">
-            <option value="50">50 kg</option>
-            <option value="55">55 kg</option>
-            <option value="60">60 kg</option>
-            <option value="65">65 kg</option>
-            <option value="70">70 kg</option>
-            <option value="75">75 kg</option>
-            <option value="80">80 kg</option>
-            <option value="85">85 kg</option>
-            <option value="90">90 kg</option>
-            <option value="95">95 kg</option>
-            <option value="100">100 kg</option>
-            <option value="105">105 kg</option>
-            <option value="110">110 kg</option>
-        </select>
-
-        <label for="diet">Dietary Preferences:</label>
-        <select id="diet">
-            <option value="none">None</option>
-            <option value="gluten-free">Gluten-Free</option>
-            <option value="vegetarian">Vegetarian</option>
-        </select>
-
-        <button id="select-meal-type">Choose Meal Plan</button>
-    </section>
-
-    <section class="meal-plans">
-        <div id="meal-buttons">
-            <button id="show-breakfast">Breakfast</button>
-            <button id="show-lunch">Lunch</button>
-            <button id="show-dinner">Dinner</button>
+        <div class="input-group">
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
         </div>
 
-        <h2>Meal Plan</h2>
-        <div id="meal-plan-display"></div>
+        <div class="input-group">
+            <label for="weight">Weight (kg)</label>
+            <select id="weight">
+                <!-- Weight range from 40kg to 200kg -->
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+                <option value="100">100</option>
+                <option value="110">110</option>
+                <option value="120">120</option>
+                <option value="130">130</option>
+                <option value="140">140</option>
+                <option value="150">150</option>
+                <option value="160">160</option>
+                <option value="170">170</option>
+                <option value="180">180</option>
+                <option value="190">190</option>
+                <option value="200">200</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="diet">Dietary Preferences</label>
+            <select id="diet">
+                <option value="none">None</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="dairy-free">Dairy-Free</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="meal-type">Choose Meal Type</label>
+            <div class="meal-buttons">
+                <button id="breakfast-btn">Breakfast</button>
+                <button id="lunch-btn">Lunch</button>
+                <button id="dinner-btn">Dinner</button>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <button id="generate-plan" class="generate-btn">Generate Meal Plan</button>
+        </div>
     </section>
 
+    <!-- Meal Plan Display Section -->
+    <section class="meal-plan-display" id="meal-plan-display">
+        <h2>Your Personalized Meal Plan</h2>
+        <ul id="meal-list">
+            <!-- Meal plans will be displayed here -->
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Meal Planner</p>
+        <p>&copy; 2025 Healthy Meal Planner</p>
     </footer>
 
     <script src="script.js"></script>
