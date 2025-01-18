@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savor Spoon - Recipe Generator</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>
-      <span class="icon">🍴</span> Savor Spoon <span class="icon">🥄</span>
-    </h1>
-    <p>Your Recipe Generator</p>
-  </header>
+    <header>
+        <h1>Healthy Meal Planner</h1>
+    </header>
 
-  <main>
-    <section id="input-section">
-      <h2>Generate Your Recipe</h2>
-      <form id="recipe-form">
-        <label for="ingredients">Enter Your Ingredients (comma-separated):</label>
-        <textarea id="ingredients" rows="3" placeholder="e.g., tomato, onion, garlic"></textarea>
-
-        <label for="style">Select a Cooking Style:</label>
-        <select id="style">
-          <option value="vegetarian">Vegetarian</option>
-          <option value="vegan">Vegan</option>
-          <option value="gluten-free">Gluten-Free</option>
-          <option value="keto">Keto</option>
-          <option value="paleo">Paleo</option>
+    <section class="user-input">
+        <label for="gender">Select Gender:</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
         </select>
 
-        <button type="submit">Generate Recipe</button>
-      </form>
+        <label for="weight">Select Weight (kg):</label>
+        <select id="weight">
+            <option value="50">50 kg</option>
+            <option value="60">60 kg</option>
+            <option value="70">70 kg</option>
+            <option value="80">80 kg</option>
+            <option value="90">90 kg</option>
+        </select>
+
+        <label for="diet">Dietary Preferences:</label>
+        <select id="diet">
+            <option value="none">None</option>
+            <option value="gluten-free">Gluten-Free</option>
+            <option value="vegetarian">Vegetarian</option>
+        </select>
     </section>
 
-    <section id="output-section" class="hidden">
-      <h2>Your Recipe</h2>
-      <div id="recipe-output"></div>
-    </section>
-  </main>
+    <section class="meal-plans">
+        <h2>Breakfast</h2>
+        <div id="breakfast-meals"></div>
 
-  <footer>
-    <p>&copy; 2025 Savor Spoon. All rights reserved.</p>
-  </footer>
+        <h2>Lunch</h2>
+        <div id="lunch-meals"></div>
+
+        <h2>Dinner</h2>
+        <div id="dinner-meals"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Meal Planner</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
